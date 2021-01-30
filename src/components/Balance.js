@@ -4,7 +4,7 @@ import './components.css'
 export const Balance = () => {
     return (
         <div className = 'balance'>
-            <h3>Balance:-</h3>
+            <h3 className = 'balance-head'>Balance:-</h3>
             <h2>$0</h2>
         </div>
     )
