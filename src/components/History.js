@@ -7,7 +7,7 @@ export const History = () => {
     return (
 
         <div className = 'history'>
-            <h3 className = 'historyheading'>History</h3><hr/>
+            <h3 className = 'historyheading'>History</h3>
             <ul className = 'list'>
                 {transactions.map(transactions => (<Transactions key = {transactions.id} transactions = {transactions}></Transactions>))}
             </ul>  

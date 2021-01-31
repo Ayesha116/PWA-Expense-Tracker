@@ -47,7 +47,38 @@
 .historyheading {
     margin: 5px auto;
 }
+.list {
+
+}
+.items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+.x-button {
+    background-color: red;
+    border: none;
+    color: white;
+}
 
 .new-transaction {
     margin: 3px auto;
+}
+input {
+    width: 97%;
+    height: 20px;
+}
+.btn {
+    width: 100%;
+    height: 25px;
+    margin: 10px auto;
+    background-color: #1A237E;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+label {
+    font-weight: bold;
 }

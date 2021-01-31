@@ -6,6 +6,8 @@ const initialState = {
     ]
 }
 
+
+
 export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = ({children}) => {
@@ -22,11 +24,21 @@ export const GlobalProvider = ({children}) => {
             payload: transaction
         })
     }
+    const balance = state.transactions.map(transaction=>transaction.amount)
+    const total = balance.reduce(function(acc, val) { return acc + val; }, 0)
+    // const income = balance.filter(function(a) {a>=0} )
+    const income = balance.filter(function (a) { return a >= 0; })
+    const expense = balance.filter(function (a) { return a < 0; })
+    const totalIncome = income.reduce(function(acc, val) { return acc + val; }, 0)
+    const totalExpense = expense.reduce(function(acc, val){ return acc+val;},0)
     return(<GlobalContext.Provider value = {
         {   
             transactions:state.transactions,
             addTransaction,
             deleteTransaction,
+            total: total,
+            totalIncome,
+            totalExpense
         }
     }>{children}
 
